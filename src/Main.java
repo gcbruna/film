@@ -3,9 +3,9 @@ import br.com.bruna.screenmatch.modelos.Film; //O importe é a forma que uma cla
 public class Main {
     public static void main(String[] args) {
         Film meuFilme = new Film(); //criando o espaço na memoria é o objeto
-        meuFilme.nome = "O Poderoso Chefão";
-        meuFilme.anoDeLancamento = 1970;
-        meuFilme.duracaoEmMinutos = 190;
+        meuFilme.setNome("O Poderoso Chefão");
+        meuFilme.setAnoDeLancamento(1970);
+        meuFilme.setDuracaoEmMinutos(190);
 
         meuFilme.exibeFichaTecnica();
         meuFilme.avalia(8);
