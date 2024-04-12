@@ -1,12 +1,12 @@
 package br.com.bruna.screenmatch.modelos;
 
 public class Film {
-    public String nome;
-    int anoDeLancamento;
-    boolean incluidoNoPlano;
+    private String nome;
+    private int anoDeLancamento;
+    private boolean incluidoNoPlano;
     private double somaDasAvaliacoes;  // Ele não deixa nem ler, nem escrever. Então o atributo privado não é somente leitura, ele está escondido, é necessário encontrar outra forma de acessá-lo.
     private int totalDeAvaliacoes;
-    int duracaoEmMinutos;
+    private int duracaoEmMinutos;
 
     public void exibeFichaTecnica(){    //método   não devolve nada, mas faz alguma coisa (não tem um retorno)
         System.out.println("Nome do filme: " + nome);
@@ -24,5 +24,21 @@ public class Film {
 
     public int getTotalDeAvaliacoes(){    // retornasse e exibisse o total de avaliações, sem que seja possível alterá-lo. Isso é o que chamamos de "método acessor".
         return totalDeAvaliacoes;
+    }
+
+    public void setNome(String nome) {   // setter - deixar a pessoa incluir um nome
+        this.nome = nome;
+    }
+
+    public void setAnoDeLancamento(int anoDeLancamento) {
+        this.anoDeLancamento = anoDeLancamento;
+    }
+
+    public void setIncluidoNoPlano(boolean incluidoNoPlano) {
+        this.incluidoNoPlano = incluidoNoPlano;
+    }
+
+    public void setDuracaoEmMinutos(int duracaoEmMinutos) {
+        this.duracaoEmMinutos = duracaoEmMinutos;
     }
 }
