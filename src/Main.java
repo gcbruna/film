@@ -7,6 +7,7 @@ public class Main {
         meuFilme.setNome("O Poderoso Chefão");
         meuFilme.setAnoDeLancamento(1970);
         meuFilme.setDuracaoEmMinutos(190);
+        System.out.println("Duração do filme: " + meuFilme.getDuracaoEmMinutos() + " minutos");
 
         meuFilme.exibeFichaTecnica();
         meuFilme.avalia(8);
@@ -20,6 +21,9 @@ public class Main {
         theLastOfUs.setEpisodiosPorTemporada(9);
         theLastOfUs.setTemporadas(1);
         theLastOfUs.setAnoDeLancamento(2023);
+        theLastOfUs.setMinutosPorEpisodio(50);
         theLastOfUs.exibeFichaTecnica();
+        System.out.println("Duração para maratonar The Last Of Us: " + theLastOfUs.getDuracaoEmMinutos() + " minutos");
+            //na especialização de serie, tenho um metodo com o mesmo nome da super classe, então vou usar o da especialização
     }
 }
