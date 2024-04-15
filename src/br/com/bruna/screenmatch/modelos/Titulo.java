@@ -8,25 +8,27 @@ public class Titulo {
     private int totalDeAvaliacoes;
     private int duracaoEmMinutos;
 
-    public void exibeFichaTecnica(){    //método   não devolve nada, mas faz alguma coisa (não tem um retorno)
-        System.out.println("Nome do filme: " + nome);
-        System.out.println("Ano de lançamento: " + anoDeLancamento);
+    public String getNome() {
+        return nome;
     }
 
-    public void avalia(double nota){
-        somaDasAvaliacoes += nota;  //pega o que ja tinha na  avaliacao e incrementa e ir somando todas as avaliacoes
-        totalDeAvaliacoes++;  //cada vez que colocar uma avaliação, ele ir incrementando essa minha total de avaliacoes
+    public int getAnoDeLancamento() {
+        return anoDeLancamento;
     }
 
-    public double pegaMediaDasAvaliacoes(){
-        return somaDasAvaliacoes / totalDeAvaliacoes;      //retorna
+    public boolean isIncluidoNoPlano() {
+        return incluidoNoPlano;
     }
 
-    public int getTotalDeAvaliacoes(){    // retornasse e exibisse o total de avaliações, sem que seja possível alterá-lo. Isso é o que chamamos de "método acessor".
+    public int getDuracaoEmMinutos() {
+        return duracaoEmMinutos;
+    }
+
+    public int getTotalDeAvaliacoes() {
         return totalDeAvaliacoes;
     }
 
-    public void setNome(String nome) {   // setter - deixar a pessoa incluir um nome
+    public void setNome(String nome) {
         this.nome = nome;
     }
 
@@ -40,5 +42,19 @@ public class Titulo {
 
     public void setDuracaoEmMinutos(int duracaoEmMinutos) {
         this.duracaoEmMinutos = duracaoEmMinutos;
+    }
+
+    public void exibeFichaTecnica(){
+        System.out.println("Nome do filme: " + nome);
+        System.out.println("Ano de lançamento: " + anoDeLancamento);
+    }
+
+    public void avalia(double nota){
+        somaDasAvaliacoes += nota;
+        totalDeAvaliacoes++;
+    }
+
+    public double pegaMediaDasAvaliacoes(){
+        return somaDasAvaliacoes / totalDeAvaliacoes;
     }
 }
