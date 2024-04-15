@@ -1,4 +1,5 @@
 import br.com.bruna.screenmatch.modelos.Film; //O importe é a forma que uma classe se referencia a outra quando estão em pacotes diferentes
+import br.com.bruna.screenmatch.modelos.Serie;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,5 +15,11 @@ public class Main {
         System.out.println("Total de Avaliação: " + meuFilme.getTotalDeAvaliacoes());
         System.out.println(meuFilme.pegaMediaDasAvaliacoes());
 
+        Serie theLastOfUs = new Serie();
+        theLastOfUs.setNome("The Last of Us");
+        theLastOfUs.setEpisodiosPorTemporada(9);
+        theLastOfUs.setTemporadas(1);
+        theLastOfUs.setAnoDeLancamento(2023);
+        theLastOfUs.exibeFichaTecnica();
     }
 }
