@@ -4,7 +4,7 @@ public class Serie extends Titulo {
     private int temporadas;
     private boolean ativa;
     private int episodiosPorTemporada;
-    private int minutosPorEpispdio;
+    private int minutosPorEpisodio;
 
     //quero poder botar valor em tudo, e quero obter valor de tudo getter and setter
     public int getTemporadas() {
@@ -32,10 +32,16 @@ public class Serie extends Titulo {
     }
 
     public int getMinutosPorEpispdio() {
-        return minutosPorEpispdio;
+        return minutosPorEpisodio;
     }
 
-    public void setMinutosPorEpispdio(int minutosPorEpispdio) {
-        this.minutosPorEpispdio = minutosPorEpispdio;
+    public void setMinutosPorEpisodio(int minutosPorEpispdio) {
+        this.minutosPorEpisodio = minutosPorEpispdio;
+    }
+
+    @Override
+    public int getDuracaoEmMinutos() {
+        return temporadas * episodiosPorTemporada * minutosPorEpisodio;
+        //aqui queremos devolver a multiplicação desses 3 campos
     }
 }
