@@ -1,3 +1,4 @@
+import br.com.bruna.screenmatch.calculos.CalculadoraDeTempo;
 import br.com.bruna.screenmatch.modelos.Film; //O importe é a forma que uma classe se referencia a outra quando estão em pacotes diferentes
 import br.com.bruna.screenmatch.modelos.Film;
 import br.com.bruna.screenmatch.modelos.Serie;
@@ -20,14 +21,52 @@ public class Main {
         theLastOfUs.setNome("The Last Of Us");
         theLastOfUs.setAnoDeLancamento(2023);
         theLastOfUs.exibeFichaTecnica();
+        theLastOfUs.setAtiva(true);
         theLastOfUs.setTemporadas(1);
         theLastOfUs.setEpisodiosPorTemporada(8);
         theLastOfUs.setMinutosPorEpisodio(50);
-        System.out.println("Duração para maratonar Lost: " + theLastOfUs.getDuracaoEmMinutos() + " minutos");
+        System.out.println("Duração para maratonar The Last Of Us: " + theLastOfUs.getDuracaoEmMinutos() + " minutos");
 
         Film outroFilme = new Film();
         outroFilme.setNome("Avatar");
         outroFilme.setAnoDeLancamento(2023);
         outroFilme.setDuracaoEmMinutos(200);
+        outroFilme.setIncluidoNoPlano(true);
+
+
+        Film favorito = new Film();
+        favorito.setNome("The Matrix");
+        favorito.setAnoDeLancamento(1999);
+        favorito.setDuracaoEmMinutos(135);
+        favorito.setIncluidoNoPlano(true);
+
+
+        Film outro = new Film();
+        outro.setNome("John Wick");
+        outro.setAnoDeLancamento(2014);
+        outro.setDuracaoEmMinutos(101);
+        outro.setIncluidoNoPlano(true);
+
+
+        Serie serie = new Serie();
+        serie.setNome("La Casa de Papel");
+        serie.setAnoDeLancamento(2017);
+        serie.setIncluidoNoPlano(true);
+        serie.setAtiva(true);
+        serie.setTemporadas(5);
+        serie.setEpisodiosPorTemporada(10);
+        serie.setMinutosPorEpisodio(45);
+
+
+        CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
+        calculadora.inclui(favorito);
+        calculadora.inclui(outro);
+        calculadora.inclui(serie);
+
+       serie.exibeFichaTecnica();
+       outro.exibeFichaTecnica();
+       favorito.exibeFichaTecnica();
+
+        System.out.println("Tempo total: " + calculadora.getTempoTotal());
     }
 }
