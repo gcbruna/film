@@ -1,4 +1,6 @@
 import br.com.bruna.screenmatch.calculos.CalculadoraDeTempo;
+import br.com.bruna.screenmatch.calculos.FiltroRecomendacao;
+import br.com.bruna.screenmatch.modelos.Episodios;
 import br.com.bruna.screenmatch.modelos.Film; //O importe é a forma que uma classe se referencia a outra quando estão em pacotes diferentes
 import br.com.bruna.screenmatch.modelos.Film;
 import br.com.bruna.screenmatch.modelos.Serie;
@@ -57,16 +59,27 @@ public class Main {
         serie.setEpisodiosPorTemporada(10);
         serie.setMinutosPorEpisodio(45);
 
+        serie.exibeFichaTecnica();
+        outro.exibeFichaTecnica();
+        favorito.exibeFichaTecnica();
+
 
         CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
         calculadora.inclui(favorito);
         calculadora.inclui(outro);
         calculadora.inclui(serie);
 
-       serie.exibeFichaTecnica();
-       outro.exibeFichaTecnica();
-       favorito.exibeFichaTecnica();
+        FiltroRecomendacao filtro = new FiltroRecomendacao();
+        filtro.filtra(meuFilme);
+
+        Episodios episodio = new Episodios();
+        episodio.setNumero(1);
+        episodio.setSerie("theLastOfUs");
+        episodio.setTotalVisualizacao(300);
+        filtro.filtra(episodio);
 
         System.out.println("Tempo total: " + calculadora.getTempoTotal());
+
+
     }
 }
