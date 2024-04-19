@@ -31,7 +31,7 @@ public class Serie extends Titulo {
         this.episodiosPorTemporada = episodiosPorTemporada;
     }
 
-    public int getMinutosPorEpispdio() {
+    public int getMinutosPorEpisodio() {
         return minutosPorEpisodio;
     }
 
@@ -43,5 +43,9 @@ public class Serie extends Titulo {
     public int getDuracaoEmMinutos() {
         return temporadas * episodiosPorTemporada * minutosPorEpisodio;
         //aqui queremos devolver a multiplicação desses 3 campos
+    }
+
+    public Serie(String nome, int anoDeLancamento) {
+        super(nome, anoDeLancamento);
     }
 }
