@@ -57,4 +57,9 @@ public class Titulo {
     public double pegaMediaDasAvaliacoes(){
         return somaDasAvaliacoes / totalDeAvaliacoes;
     }
+
+    public Titulo(String nome, int anoDeLancamento) {
+        this.nome = nome;
+        this.anoDeLancamento = anoDeLancamento;
+    }
 }
