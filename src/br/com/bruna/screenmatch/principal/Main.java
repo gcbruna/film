@@ -1,3 +1,5 @@
+package br.com.bruna.screenmatch.principal;
+
 import br.com.bruna.screenmatch.calculos.CalculadoraDeTempo;
 import br.com.bruna.screenmatch.calculos.FiltroRecomendacao;
 import br.com.bruna.screenmatch.modelos.Episodios;
