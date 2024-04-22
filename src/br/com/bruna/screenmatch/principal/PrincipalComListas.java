@@ -26,12 +26,14 @@ public class PrincipalComListas {
         lista.add(theLastOfUs);
 
         //impimir os itens dessa lista
-        for (Titulo item: lista){  //pra cada item da variavel titulo, que ta dentro da lista
+        for (Titulo item: lista) {  //pra cada item da variavel titulo, que ta dentro da lista
             System.out.println(item.getNome());
-            if(item instanceof  Film){  //para verificar se aquele item da lista é um filme realmente, isso porque ainda existe muito código legado
-                Film filme = (Film) item;  //perguntar se o item é uma instância de Filme. Se ele for um filme, aí sim queremos mostrar a classificação
+            Film filme = null;
+            if (item instanceof Film && filme.getClassificacao() > 2) {  //para verificar se aquele item da lista é um filme realmente, isso porque ainda existe muito código legado.
+                filme = (Film) item;
                 System.out.println("Classificação " + filme.getClassificacao());
             }
+            ;
         };
     }
 }
